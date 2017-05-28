@@ -56,7 +56,7 @@ namespace SerializeObject_Example
 
                 Console.WriteLine("Read from database:\n");
 
-                #region de-serialize
+                #region deserialize
 
                 var gestures = db.TblSerializeObjects.ToList();
                 var contor = 0;
