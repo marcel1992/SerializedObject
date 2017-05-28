@@ -15,26 +15,22 @@ namespace SerializeObject_Example
             using (var db = new SerializeContext())
             {
                 var lstGestureClasses = new List<GestureClass>();
+              
+                    var positionVector1 = new Vector3(2.3f, 3.4f, 5.6f);
+                        lstGestureClasses.Add(
+                       new GestureClass
+                        {
+                           Time = DateTime.Now,
+                           //Position = positionVector1,
+                           Point3D = new List<Point3D>
+                           {
+                               new Point3D{X = 12,Y = 14,Z = 14,Joint = Point3D.JointType.HandRight},
+                                new Point3D{X = 13,Y = 15,Z = 16,Joint = Point3D.JointType.HandRight}
 
-                //for (var i = 0; i < 10; i++)
-                //{
-                //    var positionVector1 = new Vector3(2.3f, 3.4f, 5.6f);
-                //    lstGestureClasses.Add(
-                //        new GestureClass
-                //        {
-                //            Time = DateTime.Now,
-                //            //Position = positionVector1,
-                //            Point3D = new List<Point3D>
-                //            {
-                //                new Point3D{X = 12,Y = 14,Z = 14,Joint = Point3D.JointType.HandRight},
-                //                new Point3D{X = 13,Y = 15,Z = 16,Joint = Point3D.JointType.HandRight}
+                           },
+                           FormatedPosition = $"{positionVector1.X},{positionVector1.Y},{positionVector1.Z}"
+                       });
 
-                //            },
-                //            FormatedPosition = $"{positionVector1.X},{positionVector1.Y},{positionVector1.Z}"
-                //        });
-
-
-                //}
 
                 Console.WriteLine("Save object:\n");
 
